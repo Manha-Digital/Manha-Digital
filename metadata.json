@@ -1,0 +1,6 @@
+{
+  "name": "Enterprise Installment and Recovery ERP",
+  "description": "Enterprise consumer financing and installment management ERP with role-based access control, customer verification, inventory, agreements, recovery, and professional reporting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

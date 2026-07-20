@@ -1,0 +1,765 @@
+{
+  "companyProfile": {
+    "name": "Manha Digital Consumer Financing",
+    "slogan": "Durable products, easy installments, reliable service",
+    "phone": "+922134567890",
+    "email": "info@manhadigital.pk",
+    "address": "Plot SB-3, Block 13-C, University Road, Gulshan-e-Iqbal, Karachi",
+    "ntn": "NTN-8930412-4",
+    "regNo": "SEC-PK-2026-904",
+    "terms": "1. All installments are payable by the 10th of each calendar month.\n2. Late fee of RS 200/day is applicable after the 5-day grace period.\n3. The company reserves the right to repossess the asset in case of default of more than two consecutive installments."
+  },
+  "employees": [
+    {
+      "id": "EMP-0001",
+      "name": "Super Administrator",
+      "username": "admin",
+      "password": "admin123",
+      "role": "Super Admin",
+      "branch": "All Branches",
+      "department": "Executive",
+      "salary": 150000,
+      "commissionRate": 0,
+      "status": "Active"
+    },
+    {
+      "id": "EMP-ROYAL",
+      "name": "Royal",
+      "username": "Royal",
+      "password": "Khairpur",
+      "role": "Super Admin",
+      "branch": "All Branches",
+      "department": "Executive",
+      "salary": 200000,
+      "commissionRate": 0,
+      "status": "Active"
+    },
+    {
+      "id": "EMP-0002",
+      "name": "Kamil Khan",
+      "username": "manager",
+      "password": "manager123",
+      "role": "Branch Manager",
+      "branch": "Karachi Central",
+      "department": "Management",
+      "salary": 90000,
+      "commissionRate": 0,
+      "status": "Active"
+    },
+    {
+      "id": "EMP-0003",
+      "name": "Ayesha Siddiqui",
+      "username": "accounts",
+      "password": "accounts123",
+      "role": "Accounts",
+      "branch": "Karachi Central",
+      "department": "Finance",
+      "salary": 75000,
+      "commissionRate": 0,
+      "status": "Active"
+    },
+    {
+      "id": "EMP-0004",
+      "name": "Zubair Shah",
+      "username": "ops",
+      "password": "ops123",
+      "role": "Operation",
+      "branch": "Karachi Central",
+      "department": "Operations",
+      "salary": 60000,
+      "commissionRate": 0,
+      "status": "Active"
+    },
+    {
+      "id": "EMP-0005",
+      "name": "Fahad Malik",
+      "username": "sales",
+      "password": "sales123",
+      "role": "Sales Executive",
+      "branch": "Karachi Central",
+      "department": "Sales",
+      "salary": 35000,
+      "commissionRate": 3,
+      "status": "Active"
+    },
+    {
+      "id": "EMP-0006",
+      "name": "Bilal Ahmed",
+      "username": "recovery",
+      "password": "recovery123",
+      "role": "Recovery Officer",
+      "branch": "Karachi Central",
+      "department": "Recovery",
+      "salary": 30000,
+      "commissionRate": 1,
+      "status": "Active"
+    },
+    {
+      "id": "EMP-0007",
+      "name": "Sana Fatima",
+      "username": "cashier",
+      "password": "cashier123",
+      "role": "Cashier",
+      "branch": "Karachi Central",
+      "department": "Finance",
+      "salary": 40000,
+      "commissionRate": 0,
+      "status": "Active"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "SUP-0001",
+      "name": "Metro Distribution",
+      "phone": "+923001234567",
+      "email": "info@metrodist.com",
+      "address": "Plot 42, Korangi Industrial Area, Karachi"
+    },
+    {
+      "id": "SUP-0002",
+      "name": "United Motors Corp",
+      "phone": "+923219876543",
+      "email": "sales@unitedmotors.pk",
+      "address": "77-A, Jail Road, Lahore"
+    }
+  ],
+  "brands": [
+    {
+      "id": "BRD-0001",
+      "name": "Apple"
+    },
+    {
+      "id": "BRD-0002",
+      "name": "Samsung"
+    },
+    {
+      "id": "BRD-0003",
+      "name": "Yamaha"
+    },
+    {
+      "id": "BRD-0004",
+      "name": "Dell"
+    }
+  ],
+  "categories": [
+    {
+      "id": "CAT-0001",
+      "name": "Smartphones"
+    },
+    {
+      "id": "CAT-0002",
+      "name": "Motorcycles"
+    },
+    {
+      "id": "CAT-0003",
+      "name": "Laptops"
+    }
+  ],
+  "products": [
+    {
+      "id": "PRD-0001",
+      "barcode": "PROD-749302",
+      "name": "iPhone 15 Pro Max 256GB",
+      "category": "Smartphones",
+      "brand": "Apple",
+      "purchasePrice": 310000,
+      "retailPrice": 345000,
+      "stockLevel": {
+        "Karachi Central": 8,
+        "Lahore West": 3
+      },
+      "serialNumber": "IMEI-990012345678901",
+      "status": "Available"
+    },
+    {
+      "id": "PRD-0002",
+      "barcode": "PROD-382910",
+      "name": "Samsung Galaxy S24 Ultra",
+      "category": "Smartphones",
+      "brand": "Samsung",
+      "purchasePrice": 280000,
+      "retailPrice": 315000,
+      "stockLevel": {
+        "Karachi Central": 5,
+        "Lahore West": 2
+      },
+      "serialNumber": "IMEI-880054321098765",
+      "status": "Available"
+    },
+    {
+      "id": "PRD-0003",
+      "barcode": "PROD-102948",
+      "name": "Yamaha YBR 125G (Black)",
+      "category": "Motorcycles",
+      "brand": "Yamaha",
+      "purchasePrice": 420000,
+      "retailPrice": 465000,
+      "stockLevel": {
+        "Karachi Central": 4,
+        "Lahore West": 0
+      },
+      "serialNumber": "ENG-YBR-9082341",
+      "status": "Available"
+    },
+    {
+      "id": "PRD-0004",
+      "barcode": "PROD-562910",
+      "name": "Dell XPS 15 9530",
+      "category": "Laptops",
+      "brand": "Dell",
+      "purchasePrice": 390000,
+      "retailPrice": 430000,
+      "stockLevel": {
+        "Karachi Central": 2,
+        "Lahore West": 1
+      },
+      "serialNumber": "TAG-XPS-6F7G8H",
+      "status": "Available"
+    }
+  ],
+  "customers": [
+    {
+      "id": "CUST-0001",
+      "name": "Muhammad Ali",
+      "cnic": "42101-1234567-1",
+      "phone": "+923007654321",
+      "address": "Flat C-12, Block 4, Gulshan-e-Iqbal, Karachi",
+      "income": 85000,
+      "verificationStatus": "Approved",
+      "documents": {
+        "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
+        "cnicFront": "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?w=300",
+        "cnicBack": "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?w=300",
+        "utilityBill": "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=300",
+        "thumb": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=150",
+        "signature": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=150"
+      },
+      "guarantors": [
+        {
+          "name": "Tariq Mehmood",
+          "cnic": "42101-9876543-1",
+          "phone": "+923334567890",
+          "relationship": "Uncle",
+          "status": "Approved"
+        }
+      ],
+      "branch": "Karachi Central",
+      "registeredBy": "sales",
+      "registeredAt": "2026-05-15T10:00:00.000Z"
+    },
+    {
+      "id": "CUST-0002",
+      "name": "Zeeshan Lodhi",
+      "cnic": "42201-9823456-3",
+      "phone": "+923122345678",
+      "address": "House 44-B, Area 37-D, Landhi, Karachi",
+      "income": 45000,
+      "verificationStatus": "Pending",
+      "documents": {
+        "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150"
+      },
+      "guarantors": [
+        {
+          "name": "Kamran Lodhi",
+          "cnic": "42201-1122334-5",
+          "phone": "+923459988776",
+          "relationship": "Brother",
+          "status": "Pending"
+        }
+      ],
+      "branch": "Karachi Central",
+      "registeredBy": "sales",
+      "registeredAt": "2026-06-27T14:30:00.000Z"
+    },
+    {
+      "id": "CUST-0003",
+      "name": "Salma Parveen",
+      "cnic": "35202-7788990-2",
+      "phone": "+923214561230",
+      "address": "Street 4, Sector G-3, Johar Town, Lahore",
+      "income": 120000,
+      "verificationStatus": "Approved",
+      "documents": {},
+      "guarantors": [],
+      "branch": "Lahore West",
+      "registeredBy": "admin",
+      "registeredAt": "2026-04-10T09:15:00.000Z"
+    }
+  ],
+  "agreements": [
+    {
+      "id": "AGR-0001",
+      "customerId": "CUST-0001",
+      "customerName": "Muhammad Ali",
+      "customerCNIC": "42101-1234567-1",
+      "branch": "Karachi Central",
+      "productId": "PRD-0001",
+      "productName": "iPhone 15 Pro Max 256GB",
+      "serialNumber": "IMEI-990012345678901",
+      "installmentPlanId": "6_months",
+      "months": 6,
+      "downPayment": 60000,
+      "totalAmount": 385000,
+      "remainingBalance": 125000,
+      "profitAmount": 40000,
+      "monthlyEMI": 54166,
+      "status": "Active",
+      "deliveryDate": "2026-05-16",
+      "agreedDate": "2026-05-15",
+      "guarantorApproved": true,
+      "qrCode": "AGR-0001-QR",
+      "barcode": "AGR-0001-BC",
+      "lateFeeRule": 200,
+      "gracePeriod": 5,
+      "adminApproved": true
+    }
+  ],
+  "installments": [
+    {
+      "id": "AGR-0001-1",
+      "agreementId": "AGR-0001",
+      "month": 1,
+      "dueDate": "2026-06-15",
+      "amountDue": 54166,
+      "amountPaid": 54166,
+      "paidDate": "2026-06-12",
+      "penaltyPaid": 0,
+      "penaltyOutstanding": 0,
+      "status": "Paid"
+    },
+    {
+      "id": "AGR-0001-2",
+      "agreementId": "AGR-0001",
+      "month": 2,
+      "dueDate": "2026-07-15",
+      "amountDue": 54166,
+      "amountPaid": 0,
+      "penaltyPaid": 0,
+      "penaltyOutstanding": 0,
+      "status": "Unpaid"
+    },
+    {
+      "id": "AGR-0001-3",
+      "agreementId": "AGR-0001",
+      "month": 3,
+      "dueDate": "2026-08-15",
+      "amountDue": 54166,
+      "amountPaid": 0,
+      "penaltyPaid": 0,
+      "penaltyOutstanding": 0,
+      "status": "Unpaid"
+    },
+    {
+      "id": "AGR-0001-4",
+      "agreementId": "AGR-0001",
+      "month": 4,
+      "dueDate": "2026-09-15",
+      "amountDue": 54166,
+      "amountPaid": 0,
+      "penaltyPaid": 0,
+      "penaltyOutstanding": 0,
+      "status": "Unpaid"
+    },
+    {
+      "id": "AGR-0001-5",
+      "agreementId": "AGR-0001",
+      "month": 5,
+      "dueDate": "2026-10-15",
+      "amountDue": 54166,
+      "amountPaid": 0,
+      "penaltyPaid": 0,
+      "penaltyOutstanding": 0,
+      "status": "Unpaid"
+    },
+    {
+      "id": "AGR-0001-6",
+      "agreementId": "AGR-0001",
+      "month": 6,
+      "dueDate": "2026-11-15",
+      "amountDue": 54170,
+      "amountPaid": 0,
+      "penaltyPaid": 0,
+      "penaltyOutstanding": 0,
+      "status": "Unpaid"
+    }
+  ],
+  "payments": [
+    {
+      "id": "REC-0001",
+      "agreementId": "AGR-0001",
+      "customerId": "CUST-0001",
+      "customerName": "Muhammad Ali",
+      "amount": 54166,
+      "penaltyAmount": 0,
+      "discountAmount": 0,
+      "paymentDate": "2026-06-12T11:00:00.000Z",
+      "receivedBy": "cashier",
+      "paymentMethod": "Cash",
+      "receiptNo": "RCT-100239"
+    },
+    {
+      "id": "REC-0002",
+      "agreementId": "AGR-0001",
+      "customerId": "CUST-0001",
+      "customerName": "Muhammad Ali",
+      "amount": 60000,
+      "penaltyAmount": 0,
+      "discountAmount": 0,
+      "paymentDate": "2026-05-15T12:00:00.000Z",
+      "receivedBy": "cashier",
+      "paymentMethod": "Cash",
+      "receiptNo": "RCT-100238"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "EXP-0001",
+      "date": "2026-06-01",
+      "category": "Rent",
+      "amount": 45000,
+      "description": "Office Rent Karachi Central",
+      "branch": "Karachi Central",
+      "recordedBy": "accounts"
+    },
+    {
+      "id": "EXP-0002",
+      "date": "2026-06-05",
+      "category": "Utility",
+      "amount": 12000,
+      "description": "Electricity Bill May 2026",
+      "branch": "Karachi Central",
+      "recordedBy": "accounts"
+    },
+    {
+      "id": "EXP-0003",
+      "date": "2026-06-25",
+      "category": "Salary",
+      "amount": 480000,
+      "description": "Staff Salaries June 2026",
+      "branch": "Karachi Central",
+      "recordedBy": "accounts"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "LOG-3298",
+      "timestamp": "2026-07-17T13:09:17.289Z",
+      "username": "Royal",
+      "role": "Compliance officer",
+      "action": "Add Complaint Note",
+      "details": "Added noting to complaint CMP-0001"
+    },
+    {
+      "id": "LOG-4782",
+      "timestamp": "2026-07-17T13:09:16.822Z",
+      "username": "Royal",
+      "role": "Compliance officer",
+      "action": "Update Complaint Status",
+      "details": "Updated status for complaint CMP-0001"
+    },
+    {
+      "id": "LOG-0001",
+      "timestamp": "2026-06-28T01:00:00.000Z",
+      "username": "admin",
+      "role": "Super Admin",
+      "action": "System Init",
+      "details": "Database initialized with standard seed configuration."
+    },
+    {
+      "id": "LOG-0002",
+      "timestamp": "2026-06-28T01:15:00.000Z",
+      "username": "manager",
+      "role": "Branch Manager",
+      "action": "Login",
+      "details": "Logged into Karachi Central branch dashboard successfully."
+    }
+  ],
+  "cashBalance": 425000,
+  "bankBalance": 1200000,
+  "bankAccounts": [
+    {
+      "id": "BNK-0001",
+      "bankName": "Meezan Bank Ltd",
+      "accountName": "Manha Consumer Financing Pvt Ltd",
+      "accountNumber": "10293048590123",
+      "branchName": "Gulshan-e-Iqbal Karachi",
+      "balance": 850000,
+      "status": "Active"
+    },
+    {
+      "id": "BNK-0002",
+      "bankName": "Habib Bank Ltd (HBL)",
+      "accountName": "Manha Consumer Financing Pvt Ltd",
+      "accountNumber": "99201948573102",
+      "branchName": "Civic Centre Karachi",
+      "balance": 350000,
+      "status": "Active"
+    }
+  ],
+  "financeTransactions": [
+    {
+      "id": "FTX-0001",
+      "date": "2026-06-25T10:00:00.000Z",
+      "type": "Debit",
+      "amount": 47500,
+      "category": "Salary",
+      "accountId": "BNK-0001",
+      "paymentMethod": "Bank",
+      "employeeId": "EMP-0005",
+      "description": "Fahad Malik - June 2026 Payroll (Salary: 35000, Commission: 12500)",
+      "whatsappStatus": "Sent",
+      "whatsappRecipient": "+923007654321",
+      "recordedBy": "accounts"
+    },
+    {
+      "id": "FTX-0002",
+      "date": "2026-06-25T11:30:00.000Z",
+      "type": "Debit",
+      "amount": 34500,
+      "category": "Salary",
+      "paymentMethod": "Cash",
+      "employeeId": "EMP-0006",
+      "description": "Bilal Ahmed - June 2026 Payroll (Salary: 30000, Commission: 4500)",
+      "whatsappStatus": "Sent",
+      "whatsappRecipient": "+923219876543",
+      "recordedBy": "accounts"
+    }
+  ],
+  "staffPayroll": [
+    {
+      "id": "PAY-0001",
+      "employeeId": "EMP-0005",
+      "employeeName": "Fahad Malik",
+      "role": "Sales Executive",
+      "month": "June 2026",
+      "baseSalary": 35000,
+      "commissionsEarned": 12500,
+      "status": "Paid",
+      "paidDate": "2026-06-25",
+      "paymentMethod": "Bank",
+      "accountId": "BNK-0001"
+    },
+    {
+      "id": "PAY-0002",
+      "employeeId": "EMP-0006",
+      "employeeName": "Bilal Ahmed",
+      "role": "Recovery Officer",
+      "month": "June 2026",
+      "baseSalary": 30000,
+      "commissionsEarned": 4500,
+      "status": "Paid",
+      "paidDate": "2026-06-25",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": "PAY-0003",
+      "employeeId": "EMP-0007",
+      "employeeName": "Sana Fatima",
+      "role": "Cashier",
+      "month": "June 2026",
+      "baseSalary": 40000,
+      "commissionsEarned": 0,
+      "status": "Paid",
+      "paidDate": "2026-06-25",
+      "paymentMethod": "Bank",
+      "accountId": "BNK-0002"
+    },
+    {
+      "id": "PAY-0004",
+      "employeeId": "EMP-0003",
+      "employeeName": "Ayesha Siddiqui",
+      "role": "Accounts",
+      "month": "June 2026",
+      "baseSalary": 75000,
+      "commissionsEarned": 0,
+      "status": "Unpaid"
+    }
+  ],
+  "lockUnlockRequests": [
+    {
+      "id": "REQ-0001",
+      "customerId": "CUST-0001",
+      "customerName": "Muhammad Ali",
+      "customerCNIC": "42101-1234567-1",
+      "actionType": "Lock",
+      "requestedBy": "sales",
+      "requestDate": "2026-06-29T10:30:00.000Z",
+      "reason": "Unpaid installment over 15 days",
+      "status": "Pending"
+    },
+    {
+      "id": "REQ-0002",
+      "customerId": "CUST-0002",
+      "customerName": "Zainab Bibi",
+      "customerCNIC": "42101-7654321-2",
+      "actionType": "Unlock",
+      "requestedBy": "recovery",
+      "requestDate": "2026-06-28T14:15:00.000Z",
+      "reason": "Cleared outstanding payment with penalty",
+      "status": "Approved",
+      "actionDate": "2026-06-28T15:00:00.000Z",
+      "actionBy": "manager",
+      "notes": "Immediate device unlock command sent"
+    }
+  ],
+  "notifications": [],
+  "legalCases": [
+    {
+      "id": "LGL-0001",
+      "caseNumber": "OS-802/2026",
+      "title": "Manha Consumer Financing vs. Kamran Butt",
+      "courtName": "Civil Court, Karachi South",
+      "customerName": "Kamran Butt",
+      "customerCNIC": "42101-9018374-3",
+      "customerPhone": "0300-8819230",
+      "status": "Active",
+      "priority": "High",
+      "fillingDate": "2026-05-10",
+      "notingHistory": [
+        {
+          "date": "2026-05-10T12:00:00.000Z",
+          "username": "royal",
+          "comment": "Legal suit filed for recovery of default amount RS 85,000 and repossession of financed device."
+        },
+        {
+          "date": "2026-06-15T15:30:00.000Z",
+          "username": "royal",
+          "comment": "First court summons served to the customer. No appearance yet."
+        }
+      ],
+      "lawyerName": "Advocate Muhammad Asif"
+    },
+    {
+      "id": "LGL-0002",
+      "caseNumber": "CCC-109/2026",
+      "title": "Sohail Khan Theft Case",
+      "courtName": "Session Court, Lahore West",
+      "customerName": "Sohail Khan",
+      "customerCNIC": "35201-1928374-1",
+      "customerPhone": "0321-7728193",
+      "status": "Pending",
+      "priority": "Medium",
+      "fillingDate": "2026-06-02",
+      "notingHistory": [
+        {
+          "date": "2026-06-02T10:00:00.000Z",
+          "username": "manager",
+          "comment": "Police FIR lodged regarding fraudulent resale of company owned financed asset (Samsung A54)."
+        }
+      ],
+      "lawyerName": "Advocate Shazia Rehman"
+    }
+  ],
+  "complaints": [
+    {
+      "id": "CMP-0001",
+      "complainerName": "Haris Mehmood",
+      "type": "Customer",
+      "cnicOrId": "42101-8392019-5",
+      "category": "Device Lock",
+      "message": "My phone was locked even though I paid my installment yesterday morning. Please unlock it immediately!",
+      "status": "Forwarded",
+      "forwardedTo": "Operation",
+      "notingHistory": [
+        {
+          "date": "2026-07-15T09:00:00.000Z",
+          "username": "cashier",
+          "comment": "Complaint registered via helpline. Customer claims payment was made. Receipt is being verified."
+        },
+        {
+          "date": "2026-07-15T10:15:00.000Z",
+          "username": "accounts",
+          "comment": "Payment verified in bank statement. Forwarding to Operations to execute manual unlock."
+        },
+        {
+          "date": "2026-07-17T13:09:16.821Z",
+          "username": "Royal",
+          "comment": "Complaint status changed from Forwarded to Forwarded"
+        },
+        {
+          "date": "2026-07-17T13:09:16.821Z",
+          "username": "Royal",
+          "comment": "Complaint forwarded from \"Operation\" to \"Operation\""
+        },
+        {
+          "date": "2026-07-17T13:09:17.289Z",
+          "username": "Royal",
+          "comment": "FORWARDED Complaint to [Operation Department]. Reason/Task: action in this case"
+        }
+      ],
+      "timestamp": "2026-07-15T09:00:00.000Z"
+    },
+    {
+      "id": "CMP-0002",
+      "complainerName": "Sana Fatima (Cashier)",
+      "type": "Employee",
+      "cnicOrId": "EMP-0007",
+      "category": "Staff Behavior",
+      "message": "Customer at Lahore branch misbehaved and threatened staff when asked to submit duplicate CNIC for guarantor verification.",
+      "status": "In Progress",
+      "forwardedTo": "Branch Manager",
+      "notingHistory": [
+        {
+          "date": "2026-07-16T11:00:00.000Z",
+          "username": "royal",
+          "comment": "Complaint received and forwarded to Lahore Branch Manager to coordinate with security guards."
+        }
+      ],
+      "timestamp": "2026-07-16T11:00:00.000Z"
+    }
+  ],
+  "corporateFilings": [
+    {
+      "id": "FLG-0001",
+      "title": "SECP Annual Return (Form A)",
+      "authority": "SECP",
+      "type": "Annual Return",
+      "status": "Pending",
+      "dueDate": "2026-10-31",
+      "notes": "Filing of annual corporate return including list of directors and share capital details.",
+      "notingHistory": [
+        {
+          "date": "2026-07-01T12:00:00.000Z",
+          "username": "royal",
+          "comment": "Drafting initiated. Audited accounts from internal audit team are awaited."
+        }
+      ]
+    },
+    {
+      "id": "FLG-0002",
+      "title": "FBR Income Tax Return TY-2026",
+      "authority": "FBR",
+      "type": "Income Tax",
+      "status": "Under Review",
+      "dueDate": "2026-09-30",
+      "notes": "Corporate income tax return filing for tax year 2026.",
+      "notingHistory": [
+        {
+          "date": "2026-07-05T14:00:00.000Z",
+          "username": "accounts",
+          "comment": "Income statements compiled. Tax consultant appointed for final review of withholding credits."
+        }
+      ]
+    }
+  ],
+  "companyPolicies": [
+    {
+      "id": "POL-0001",
+      "title": "Financed Device Lockout & Repossession SOP",
+      "category": "SOP",
+      "content": "1. Handset will be locked 5 days after the due date if installment is unpaid.\n2. Manual unlock is only allowed if payment proof is verified by the Cashier or Accounts team.\n3. Defaulter repossession process initiates on the 30th day of consecutive lockout. Legal notices must be issued automatically.",
+      "publishedBy": "Super Admin",
+      "publishedDate": "2026-01-15",
+      "version": "v2.1"
+    },
+    {
+      "id": "POL-0002",
+      "title": "FBR & SECP Customer Documentation Compliance",
+      "category": "Compliance",
+      "content": "1. All leasing agreements must record the valid customer and guarantor CNIC (National Identity Card).\n2. Thumb verification or bio-metric confirmation is mandatory for commercial agreements over RS 100,000.\n3. All sales tax invoices must be uploaded to FBR digital tax ledger weekly.",
+      "publishedBy": "Super Admin",
+      "publishedDate": "2026-03-10",
+      "version": "v1.4"
+    }
+  ]
+}

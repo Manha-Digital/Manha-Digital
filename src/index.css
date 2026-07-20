@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Bahnschrift SemiLight", "Bahnschrift", "Segoe UI", "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bahnschrift SemiLight", "Bahnschrift", "Segoe UI", "Outfit", "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+}
+
+/* Custom Keyframes for Fluid Dynamic Backgrounds */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-orb-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  33% { transform: translate(40px, -60px) scale(1.15) rotate(120deg); }
+  66% { transform: translate(-35px, 45px) scale(0.9) rotate(240deg); }
+}
+
+@keyframes float-orb-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  50% { transform: translate(-60px, 60px) scale(1.2) rotate(-180deg); }
+}
+
+@keyframes float-orb-3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  40% { transform: translate(50px, 40px) scale(0.85) rotate(90deg); }
+}
+
+@keyframes pulse-uv {
+  0%, 100% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.15), 0 0 5px rgba(16, 185, 129, 0.1); }
+  50% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.35), 0 0 15px rgba(16, 185, 129, 0.25); }
+}
+
+@keyframes uv-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.animate-float-1 {
+  animation: float-orb-1 18s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-orb-2 22s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-orb-3 16s ease-in-out infinite;
+}
+
+.animate-pulse-uv {
+  animation: pulse-uv 4s ease-in-out infinite;
+}
+
+/* Beautiful custom metallic UV shimmer text */
+.text-shimmer-uv {
+  background: linear-gradient(
+    to right,
+    #ffffff 20%,
+    #a78bfa 40%,
+    #10b981 60%,
+    #ffffff 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: uv-shine 4s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10b981, #8b5cf6); /* emerald to violet */
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* Print Friendly Layouts */
+#print-clone-temp {
+  display: none !important;
+}
+
+@media print {
+  /* Hide the active React app completely from paper */
+  body.printing-active > *:not(#print-clone-temp) {
+    display: none !important;
+  }
+  
+  /* Render only the isolated clone */
+  body.printing-active #print-clone-temp {
+    display: block !important;
+  }
+  
+  body.printing-active #print-clone-temp * {
+    visibility: visible !important;
+  }
+
+  body.printing-active #print-clone-temp table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+  body.printing-active #print-clone-temp thead {
+    display: table-header-group !important;
+  }
+  body.printing-active #print-clone-temp tbody {
+    display: table-row-group !important;
+  }
+  body.printing-active #print-clone-temp tr {
+    display: table-row !important;
+  }
+  body.printing-active #print-clone-temp th,
+  body.printing-active #print-clone-temp td {
+    display: table-cell !important;
+  }
+  
+  body.printing-active #print-clone-temp .flex {
+    display: flex !important;
+  }
+  body.printing-active #print-clone-temp .grid {
+    display: grid !important;
+  }
+  body.printing-active #print-clone-temp .hidden {
+    display: none !important;
+  }
+
+  /* Thermal receipt styling optimized for 80mm roll printers */
+  body.printing-active #print-clone-temp.thermal-receipt {
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 2mm !important;
+    background: white !important;
+    color: black !important;
+    font-size: 10px !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  body.printing-active #print-clone-temp.thermal-receipt * {
+    font-family: 'Courier New', Courier, monospace !important;
+    color: black !important;
+    font-size: 10px !important;
+  }
+
+  /* Standard A4 layout styling */
+  body.printing-active #print-clone-temp.a4-document {
+    width: 100% !important;
+    max-width: 210mm !important; /* A4 width */
+    margin: 0 auto !important;
+    padding: 10mm !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  body.printing-active #print-clone-temp.a4-document * {
+    color: black !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+/* Glassmorphism glass card */
+.glass-card {
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Ultraviolet Futuristic dynamic design */
+.uv-border-glow {
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.uv-border-glow:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15), 0 0 5px rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
