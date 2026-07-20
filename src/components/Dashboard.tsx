@@ -971,23 +971,23 @@ export const Dashboard: React.FC<DashboardProps> = ({ currentUser, setCurrentVie
               ) : (
                 <div className="divide-y divide-slate-100">
                   {displayedPendingAgreements.map(agr => (
-                    <div key={agr.id} className="py-3 flex justify-between items-center text-xs">
-                      <div>
-                        <div className="flex items-center gap-1.5 flex-nowrap min-w-0 overflow-hidden">
-                          <span className="font-bold text-slate-800 truncate whitespace-nowrap">{agr.customerName}</span>
-                          <span className="text-slate-300 shrink-0">|</span>
-                          <span className="text-[10px] text-slate-500 font-mono font-semibold truncate whitespace-nowrap">{agr.productName}</span>
-                          <span className="text-slate-300 shrink-0">|</span>
-                          <span className="text-emerald-700 font-bold whitespace-nowrap shrink-0">EMI: RS {agr.monthlyEMI.toLocaleString()}</span>
+                    <div key={agr.id} className="py-3.5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2.5 text-xs">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-1.5 min-w-0">
+                          <span className="font-bold text-slate-800">{agr.customerName}</span>
+                          <span className="text-slate-300 hidden xs:inline">|</span>
+                          <span className="text-[10px] text-slate-500 font-mono font-semibold">{agr.productName}</span>
+                          <span className="text-slate-300 hidden xs:inline">|</span>
+                          <span className="text-emerald-700 font-extrabold">EMI: RS {agr.monthlyEMI.toLocaleString()}</span>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 justify-between sm:justify-end">
                         <span className="text-[10px] bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded font-bold uppercase tracking-wider font-mono">
                           Pending
                         </span>
                         <button
                           onClick={() => setCurrentView('Verifications')}
-                          className="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded border border-emerald-200 text-[10px] font-bold"
+                          className="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded border border-emerald-200 text-[10px] font-bold cursor-pointer"
                         >
                           Process
                         </button>

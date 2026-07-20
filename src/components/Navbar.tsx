@@ -8,7 +8,7 @@ import {
   LayoutDashboard, Box, Users, ShieldAlert, FileText, 
   Coins, Receipt, BarChart3, UserCheck, History, LogOut, 
   Bell, ChevronDown, User, Shield, Briefcase, MapPin, Settings, Landmark,
-  Smartphone, Building, Check, Scale, MessageSquareCode
+  Smartphone, Building, Check, Scale, MessageSquareCode, Menu, X
 } from 'lucide-react';
 import { Employee, RoleType, StaffNotification } from '../types';
 import { motion } from 'motion/react';
@@ -23,6 +23,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentView, setCurrentView, currentUser, onLogout }) => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [companyProfile, setCompanyProfile] = useState<{ name: string; logoUrl?: string; sidebarBgUrl?: string; loginBgUrl?: string } | null>(null);
   const [notifications, setNotifications] = useState<StaffNotification[]>([]);
   const [whatsappAssignee, setWhatsappAssignee] = useState<string>('admin');
@@ -159,29 +160,40 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, setCurrentView, cur
   return (
     <>
       {/* Horizontal Upper Header Bar - ELITE PRIVATE WEALTH TERMINAL (LIGHT THEME) */}
-      <header id="app-header" className="bg-white border-b border-slate-200 sticky top-0 z-40 px-6 py-3 h-16 flex items-center justify-between no-print font-sans shadow-xs relative text-slate-900">
+      <header id="app-header" className="bg-white border-b border-slate-200 sticky top-0 z-40 px-4 md:px-6 py-3 h-16 flex items-center justify-between no-print font-sans shadow-xs relative text-slate-900">
         {/* Dynamic liquid gold-emerald premium brand line */}
         <div className="absolute bottom-[-2px] left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600" />
         
-        {/* Brand Label */}
-        <div className="flex items-center gap-3.5 relative z-10">
-          {companyProfile?.logoUrl ? (
-            <img 
-              src={companyProfile.logoUrl} 
-              alt="Logo" 
-              className="h-12 sm:h-14 md:h-15 w-auto max-w-[180px] object-contain transition-all duration-300" 
-              referrerPolicy="no-referrer"
-            />
-          ) : (
-            <div className="h-10 w-10 flex items-center justify-center text-emerald-600 shrink-0">
-              <Shield className="w-6 h-6 text-emerald-600" />
+        <div className="flex items-center gap-2 relative z-10 min-w-0">
+          {/* Mobile Hamburger / Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-1.5 -ml-1 md:hidden text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-xl transition-all cursor-pointer shrink-0"
+            aria-label="Toggle Navigation Menu"
+          >
+            {isMobileMenuOpen ? <X className="w-5.5 h-5.5 text-slate-700" /> : <Menu className="w-5.5 h-5.5 text-slate-600" />}
+          </button>
+
+          {/* Brand Label */}
+          <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
+            {companyProfile?.logoUrl ? (
+              <img 
+                src={companyProfile.logoUrl} 
+                alt="Logo" 
+                className="h-9 sm:h-12 md:h-15 w-auto max-w-[100px] sm:max-w-[180px] object-contain transition-all duration-300" 
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              <div className="h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center text-emerald-600 shrink-0">
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
+              </div>
+            )}
+            <div className="min-w-0">
+              <h1 className="text-xs sm:text-base md:text-xl font-black tracking-tight font-display text-slate-950 block leading-tight truncate max-w-[120px] sm:max-w-[200px] md:max-w-none">
+                {companyProfile?.name || "Manha Consumer Financing"}
+              </h1>
+              <p className="text-[8px] text-slate-500 font-extrabold uppercase tracking-widest font-mono hidden sm:block">Future Wealth Terminal v1.5</p>
             </div>
-          )}
-          <div>
-            <h1 className="text-base sm:text-lg md:text-xl font-black tracking-tight font-display text-slate-950 block leading-tight">
-              {companyProfile?.name || "Manha Consumer Financing"}
-            </h1>
-            <p className="text-[9px] text-slate-500 font-extrabold uppercase tracking-widest font-mono">Future Wealth Terminal v1.5</p>
           </div>
         </div>
 
@@ -417,10 +429,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, setCurrentView, cur
         </div>
       </header>
 
-      {/* Sidebar - Persistent left deck on desktops / Floating Gorgeous Nav on mobile (Light modern theme) */}
+      {/* 1. Desktop Persistent Left Sidebar (Visible only on md: screens and up) */}
       <nav 
         id="app-sidebar" 
-        className="fixed bottom-3 left-3 right-3 md:bottom-0 md:left-0 md:right-0 md:top-16 md:right-auto md:w-64 bg-white md:bg-gradient-to-b md:from-white md:via-[#fbfdfc] md:to-[#f4f9f7] border border-slate-200/80 md:border-0 md:border-r border-slate-200/90 z-30 flex md:flex-col justify-around md:justify-start py-2 md:py-6 no-print h-16 md:h-[calc(100vh-64px)] font-sans text-slate-700 overflow-hidden md:overflow-y-auto no-scrollbar rounded-2xl md:rounded-none shadow-xl md:shadow-none backdrop-blur-md md:backdrop-blur-none transition-all duration-700"
+        className="hidden md:flex fixed top-16 bottom-0 left-0 w-64 bg-white bg-gradient-to-b from-white via-[#fbfdfc] to-[#f4f9f7] border-r border-slate-200/90 z-30 flex-col py-6 no-print font-sans text-slate-700 overflow-y-auto no-scrollbar shadow-xs select-none"
         style={companyProfile?.sidebarBgUrl ? {
           backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.97)), url(${companyProfile.sidebarBgUrl})`,
           backgroundSize: 'cover',
@@ -428,10 +440,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, setCurrentView, cur
           backgroundRepeat: 'no-repeat'
         } : {}}
       >
-        
-        {/* Animated glowing orbs and mesh - Light mode */}
+        {/* Animated glowing orbs and mesh for Desktop - Light mode */}
         {!companyProfile?.sidebarBgUrl && (
-          <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none hidden md:block">
+          <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
             <div className="absolute top-0 left-0 w-full h-1/2 bg-emerald-500/5 blur-[50px]" />
             <div className="absolute top-[10%] left-[10%] w-32 h-32 rounded-full bg-emerald-400/5 blur-[40px] animate-float-1" />
             <div className="absolute bottom-[20%] right-[10%] w-40 h-40 rounded-full bg-teal-400/5 blur-[45px] animate-float-2" />
@@ -439,16 +450,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, setCurrentView, cur
           </div>
         )}
 
-        {/* Desktop Brand Logo Section inside Sidebar - Removed per request */}
-        <div className="pt-4" />
-
-        <div className="hidden md:block px-4.5 mb-2.5 mt-1 relative z-10">
+        <div className="px-4.5 mb-2.5 mt-1 relative z-10">
           <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest font-sans">
             Modules Navigator
           </span>
         </div>
         
-        <div className="flex md:flex-col gap-1 w-full px-2 md:px-3 overflow-x-auto md:overflow-x-visible no-scrollbar relative z-10">
+        <div className="flex flex-col gap-1 w-full px-3 relative z-10">
           {navItems.map(item => {
             const Icon = item.icon;
             const isActive = currentView === item.id;
@@ -457,23 +465,167 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, setCurrentView, cur
                 id={`nav-${item.id}`}
                 key={item.id}
                 onClick={() => setCurrentView(item.id)}
-                className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-300 whitespace-nowrap md:w-full flex-shrink-0 group cursor-pointer border ${
+                className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-300 w-full group cursor-pointer border ${
                   isActive 
                     ? 'bg-gradient-to-r from-emerald-50/75 via-[#f2faf5] to-white border-emerald-500/25 text-emerald-900 font-black shadow-xs relative before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-1 before:bg-emerald-600 before:rounded-r-full' 
                     : 'text-slate-500 hover:text-slate-800 hover:bg-slate-150/40 border-transparent font-medium'
                 }`}
               >
                 <Icon className={`w-4 h-4 flex-shrink-0 transition-all duration-300 ${isActive ? 'scale-110 text-emerald-600' : 'text-slate-450 group-hover:scale-105 group-hover:text-slate-750'}`} />
-                <span className="text-xs md:block hidden tracking-wide group-hover:translate-x-0.5 transition-transform">{item.label}</span>
+                <span className="text-xs tracking-wide group-hover:translate-x-0.5 transition-transform">{item.label}</span>
               </button>
             );
           })}
         </div>
         
-        <div className="hidden md:flex flex-col mt-auto px-4 pt-4 border-t border-slate-100 text-[10px] text-slate-400 gap-1 select-none relative z-10">
+        <div className="flex flex-col mt-auto px-4 pt-4 border-t border-slate-100 text-[10px] text-slate-400 gap-1 select-none relative z-10">
           <p>Logged in as: <span className="text-slate-600 font-semibold">{currentUser.name}</span></p>
           <p className="font-mono text-[9px] text-slate-400">IP Secure Terminal Gateway</p>
         </div>
+      </nav>
+
+      {/* 2. Mobile Off-Canvas Slide Drawer Navigation Menu (Visible only on mobile screens) */}
+      <div id="mobile-nav-overlay" className="no-print">
+        {/* Backdrop overlay */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 md:hidden transition-opacity duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
+        {/* Sliding Menu Drawer */}
+        <div 
+          className={`fixed top-0 left-0 bottom-0 w-72 max-w-[85vw] bg-white border-r border-slate-200 z-50 p-5 flex flex-col shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+          style={companyProfile?.sidebarBgUrl ? {
+            backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.98)), url(${companyProfile.sidebarBgUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          } : {}}
+        >
+          {/* Header of Mobile Drawer */}
+          <div className="flex justify-between items-center pb-4 mb-4 border-b border-slate-100">
+            <div className="flex items-center gap-2.5 min-w-0">
+              {companyProfile?.logoUrl ? (
+                <img 
+                  src={companyProfile.logoUrl} 
+                  alt="Logo" 
+                  className="h-8 w-auto max-w-[120px] object-contain" 
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <Shield className="w-5 h-5 text-emerald-600 shrink-0" />
+              )}
+              <span className="font-bold text-slate-900 text-xs truncate max-w-[120px]">
+                {companyProfile?.name || "Manha Consumer"}
+              </span>
+            </div>
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="p-1.5 hover:bg-slate-100 active:bg-slate-200 rounded-lg text-slate-500 cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Module Links List with Independent Scroll */}
+          <div className="flex-1 overflow-y-auto pr-1 space-y-1.5 no-scrollbar">
+            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest px-3 mb-2">
+              Select Module
+            </p>
+            {navItems.map(item => {
+              const Icon = item.icon;
+              const isActive = currentView === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setCurrentView(item.id);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`flex items-center gap-3.5 w-full px-3.5 py-3 rounded-xl text-left transition-all duration-200 cursor-pointer border ${
+                    isActive 
+                      ? 'bg-emerald-50 border-emerald-500/25 text-emerald-950 font-black shadow-xs' 
+                      : 'text-slate-600 hover:text-slate-950 hover:bg-slate-50 border-transparent font-medium'
+                  }`}
+                >
+                  <Icon className={`w-4.5 h-4.5 shrink-0 ${isActive ? 'text-emerald-600 scale-110' : 'text-slate-400'}`} />
+                  <span className="text-xs leading-none">{item.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Footer of Mobile Drawer */}
+          <div className="mt-auto pt-4 border-t border-slate-100 flex items-center gap-3">
+            <div className="h-9 w-9 rounded-xl bg-slate-100 overflow-hidden flex items-center justify-center shrink-0 border border-slate-200 shadow-xs">
+              {currentUser.photo ? (
+                <img 
+                  src={currentUser.photo} 
+                  alt={currentUser.name} 
+                  className="h-full w-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <User className="w-4.5 h-4.5 text-emerald-600" />
+              )}
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs font-bold text-slate-900 truncate leading-none">{currentUser.name}</p>
+              <p className="text-[9px] text-slate-400 font-mono truncate mt-1">
+                @{currentUser.username} • {currentUser.role}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 3. Mobile Bottom Toolbar / Navigation Dock (Always anchored at bottom of mobile screen) */}
+      <nav 
+        id="mobile-bottom-dock" 
+        className="fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-slate-200/80 px-2 flex items-center justify-around z-30 shadow-2xl md:hidden no-print select-none"
+      >
+        {/* Dynamic primary quick navigation keys */}
+        {['Dashboard', 'Recovery', 'WhatsApp', 'Customers']
+          .filter(id => hasAccess(id))
+          .slice(0, 3)
+          .map(id => {
+            const item = navItems.find(x => x.id === id);
+            if (!item) return null;
+            const Icon = item.icon;
+            const isActive = currentView === id;
+            return (
+              <button
+                key={id}
+                onClick={() => {
+                  setCurrentView(id);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`flex flex-col items-center justify-center gap-1 cursor-pointer flex-1 py-1 h-full transition-all duration-200 ${
+                  isActive ? 'text-emerald-600 font-extrabold' : 'text-slate-400 hover:text-slate-600'
+                }`}
+              >
+                <Icon className={`w-5.5 h-5.5 transition-all ${isActive ? 'scale-110 text-emerald-600' : 'text-slate-400'}`} />
+                <span className="text-[9px] font-semibold tracking-tight truncate max-w-[85px] leading-none">
+                  {id === 'Dashboard' ? 'Home' : id === 'WhatsApp' ? 'Alerts' : id}
+                </span>
+              </button>
+            );
+          })}
+
+        {/* More Options / Hamburger Drawer Toggle */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className={`flex flex-col items-center justify-center gap-1 cursor-pointer flex-1 py-1 h-full transition-all duration-200 ${
+            isMobileMenuOpen ? 'text-emerald-600 font-extrabold' : 'text-slate-400 hover:text-slate-600'
+          }`}
+        >
+          {isMobileMenuOpen ? <X className="w-5.5 h-5.5 text-emerald-600 scale-110" /> : <Menu className="w-5.5 h-5.5 text-slate-400" />}
+          <span className="text-[9px] font-semibold tracking-tight leading-none">Menu</span>
+        </button>
       </nav>
     </>
   );
